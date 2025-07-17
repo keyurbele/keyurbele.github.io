@@ -1,136 +1,66 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KarmaCode | Keyur Bele</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KarmaCode | Keyur Bele</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+  <header>
+    <h1>KarmaCode</h1>
+    <p>Projects, Research, and Blog</p>
+    <a href="resume.pdf" download>Download Resume</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I’m <strong>Keyur Bele</strong>, a high school student at Ridge Point High School with a passion for computer science. This site highlights my projects, research, and journey as I build my portfolio for college and beyond.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div>
+      <h3>Ridge Point High School</h3>
+      <p>Expected Graduation: 2026</p>
+      <ul>
+        <li>AP English Language & Composition</li>
+        <li>AP Computer Science (Math & LOTE Credit)</li>
+        <li>OnRamps Algebra, Physics, and U.S. History</li>
+        <li>ASL 2, Health, and Speech</li>
+      </ul>
     </div>
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </header>
+  </section>
 
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Keyur Bele</h1>
-            <h2>High School Student | Aspiring Computer Scientist</h2>
-            <a href="#contact" class="btn-rounded-white">Contact Me</a>
-        </div>
-        <div id="lead-overlay"></div>
-        <div id="lead-down">
-            <span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
-        </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div>
+      <h3>Personal Portfolio Website</h3>
+      <p>A responsive website to showcase my computer science projects and resume using HTML, CSS, and GitHub Pages.</p>
+      <a href="#">View Project</a>
     </div>
-
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="heading">About Me</h2>
-                </div>
-                <div class="col-md-8">
-                    <p>Hi! I’m Keyur, a student at Ridge Point High School passionate about computer science. This site is where I showcase my projects, research, and personal growth. I'm building a strong portfolio to prepare for college and internships. I recently won gold medals in Taekwondo and completed a tech internship related to blood donation systems.</p>
-                </div>
-            </div>
-        </div>
+    <div>
+      <h3>More Projects Coming Soon</h3>
+      <p>I'm currently working on more web development and Python-based projects. Stay tuned!</p>
     </div>
+  </section>
 
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project1.jpg" />
-                    </div>
-                    <div class="project-info">
-                        <h3>Personal Website</h3>
-                        <p>A responsive website built using HTML, CSS, and JavaScript to showcase my work and skills.</p>
-                        <a href="https://github.com/keyurbele/personal-website" target="_blank">View Project</a>
-                    </div>
-                </div>
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>Python · JavaScript · HTML & CSS · React · Git & GitHub · Java</p>
+  </section>
 
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project2.jpg" />
-                    </div>
-                    <div class="project-info">
-                        <h3>Taekwondo Training App</h3>
-                        <p>An app to help track training, goals, and techniques in martial arts.</p>
-                        <a href="https://github.com/keyurbele/taekwondo-app" target="_blank">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <form>
+      <input type="email" placeholder="Your email" required />
+      <textarea placeholder="Your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
-    <div id="skills">
-        <h2 class="heading">Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>JavaScript</li>
-            <li>HTML & CSS</li>
-            <li>React</li>
-            <li>Git & GitHub</li>
-            <li>Java</li>
-        </ul>
-    </div>
-
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/f/mleyzbzd">
-                <input type="hidden" name="_subject" value="Portfolio Contact Request" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>&copy; <span id="current-year">2025</span> Keyur Bele</p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li><a href="https://github.com/keyurbele" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                        <li><a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+  <footer>
+    <p>Copyright © 2025 Keyur Bele</p>
+  </footer>
 </body>
-
 </html>
