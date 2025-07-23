@@ -13,45 +13,70 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
   <style>
-    /* Basic styles for blog cards and content */
+    /* Blog topics style: clickable titles only */
     #blog .blog-topic {
       cursor: pointer;
-      padding: 15px;
-      margin-bottom: 10px;
-      background-color: #f0f4f8;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
+      padding: 15px 20px;
+      margin-bottom: 12px;
+      background-color: #f9fafb;
+      border-left: 4px solid transparent;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+      border-radius: 4px;
+      color: #222;
     }
 
     #blog .blog-topic:hover {
-      background-color: #dbe9ff;
+      background-color: #e2ebff;
+      border-left-color: #3b82f6;
+      color: #1e40af;
     }
 
+    /* Blog content block */
     #blog .blog-content {
       display: none;
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #e8f0fe;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+      margin-top: 30px;
+      padding: 25px 30px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      color: #111;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      white-space: pre-line; /* preserve line breaks */
     }
 
     #blog .blog-content.active {
       display: block;
     }
 
-    #blog .close-btn {
-      margin-top: 10px;
-      display: inline-block;
-      background-color: #007bff;
-      color: white;
-      padding: 5px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
+    #blog .blog-content h2 {
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 20px;
+      font-size: 2rem;
     }
 
-    /* Smooth scroll behavior */
+    #blog .close-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 18px;
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    #blog .close-btn:hover {
+      background-color: #2563eb;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -151,43 +176,33 @@
       </ul>
     </section>
 
-    <!-- New Blog Section -->
+    <!-- Blog Section -->
     <section id="blog" class="section background-alt">
       <h2 class="heading">Blog</h2>
 
-      <!-- Blog topics list -->
+      <!-- Blog topics list: only titles -->
       <div id="blog-topics">
         <div class="blog-topic" data-post="future">
-          <h3>🔮 The Future I Imagine</h3>
-          <p>A personal take on where technology and life are heading in the next decades...</p>
+          🔮 The Future I Imagine
         </div>
-        <!-- You can add more blog-topic divs here with different data-post -->
       </div>
 
-      <!-- Blog full content display -->
+      <!-- Blog full content -->
       <div id="blog-posts">
         <div id="post-future" class="blog-content">
-          <h3>🔮 The Future I Imagine</h3>
-          <p>As a high school student passionate about tech, here’s how I imagine the future...</p>
+          <h2>🔮 The Future I Imagine</h2>
+          <p>
+            As a high school student with a passion for technology, I often think about how the future will shape our lives. I imagine a world where technology not only makes our daily tasks easier but also helps us connect with one another more deeply. Smart devices will become even smarter, seamlessly integrating into our homes and cities to create environments that are responsive and adaptive.
 
-          <h4>🚀 Smarter Technology</h4>
-          <p>AI will evolve beyond tools — becoming personal assistants, creators, and maybe even emotional companions.</p>
+            Artificial intelligence will advance to the point where it can assist us in creative endeavors, learning, and problem-solving, acting almost like a partner. Transportation will be revolutionized by self-driving vehicles, making travel safer and more efficient. Education will transform through immersive experiences, allowing students to explore and learn in ways never before possible.
 
-          <h4>🏙️ Sci-Fi Cities</h4>
-          <p>Everything will be connected. Cars will drive themselves. Buildings will talk to us. Smart energy will rule.</p>
+            Despite the rise of automation, human creativity and empathy will remain invaluable, leading to new jobs that blend technology with human insight. Health technologies will help monitor and improve well-being in real time, helping people live longer and healthier lives.
 
-          <h4>🧬 Health + Education</h4>
-          <p>Wearables will track health in real time. Students will learn through VR worlds instead of textbooks.</p>
-
-          <h4>🤖 Jobs Will Change</h4>
-          <p>Robots will handle repetitive tasks. The most important skills will be creativity and tech thinking.</p>
-
-          <h4>💡 Final Thoughts</h4>
-          <p>This is the future I dream of — and I want to help build it through code, creativity, and curiosity.</p>
+            This vision excites me because I want to be part of building this future — using my skills in coding and problem-solving to contribute to innovations that positively impact the world.
+          </p>
 
           <span class="close-btn" onclick="closePost()">Close</span>
         </div>
-        <!-- Add more blog-content divs here for other posts -->
       </div>
     </section>
 
@@ -227,7 +242,7 @@
   </footer>
 
   <script>
-    // Scroll to top functionality
+    // Scroll to top
     document.getElementById("to-top").addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
@@ -241,24 +256,23 @@
 
     topics.forEach((topic) => {
       topic.addEventListener("click", () => {
-        const postId = "post-" + topic.dataset.post;
-
         // Hide all posts
         posts.forEach((post) => post.classList.remove("active"));
 
-        // Show selected post
+        // Show clicked post
+        const postId = "post-" + topic.dataset.post;
         const activePost = document.getElementById(postId);
         if (activePost) {
           activePost.classList.add("active");
-          // Scroll to blog-posts div smoothly
           activePost.scrollIntoView({ behavior: "smooth" });
         }
       });
     });
 
-    // Close button handler
+    // Close button function
     function closePost() {
       posts.forEach((post) => post.classList.remove("active"));
+      document.getElementById("blog-topics").scrollIntoView({ behavior: "smooth" });
     }
   </script>
 </body>
