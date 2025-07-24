@@ -1,52 +1,316 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KarmaCode - Keyur Bele</title>
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+
+  <!-- Fonts: Elegant Serif + Clean Sans-serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
   <style>
-    /* Blog topics style: clickable titles only */
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0f111a;
+      color: #d1c7b7;
+      line-height: 1.6;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: #cba135;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #f0d875;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* Header */
+    header {
+      background: #121623;
+      padding: 20px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid #362f25;
+    }
+
+    #menu {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+    }
+
+    #menu li a {
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    #menu li a:hover,
+    #menu li a.active {
+      background: #cba135;
+      color: #0f111a;
+      font-weight: 700;
+    }
+
+    /* Lead section */
+    #lead {
+      background: linear-gradient(135deg, #3c2f23, #cba135);
+      color: #fff8e1;
+      text-align: center;
+      padding: 120px 20px 100px;
+      font-family: 'Merriweather', serif;
+      letter-spacing: 1.1px;
+      box-shadow: inset 0 0 30px #cba135aa;
+      border-radius: 12px;
+      margin-bottom: 50px;
+      user-select: none;
+    }
+
+    #lead h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px #f0d875cc;
+    }
+
+    #lead h2 {
+      font-weight: 400;
+      font-size: 1.6rem;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .btn-rounded-white {
+      background: #f0d875;
+      color: #0f111a;
+      font-weight: 700;
+      padding: 15px 40px;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px #f0d875cc;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .btn-rounded-white:hover {
+      background: #cba135;
+      color: #fff8e1;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 60px;
+    }
+
+    .heading {
+      font-family: 'Merriweather', serif;
+      font-weight: 900;
+      font-size: 2.6rem;
+      color: #cba135;
+      margin-bottom: 25px;
+      letter-spacing: 1.2px;
+      border-bottom: 3px solid #cba135;
+      padding-bottom: 6px;
+      user-select: none;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #e3d9b0;
+      max-width: 700px;
+      user-select: none;
+    }
+
+    /* Education */
+    .education-block h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #fff8e1;
+      margin-bottom: 5px;
+    }
+
+    .education-block h4 {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #cba135cc;
+      margin-bottom: 0;
+    }
+
+    /* Projects */
+    .background-alt {
+      background: #121623;
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #cba13555;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .project {
+      background: #1c1f2a;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px #cba13566;
+      overflow: hidden;
+      flex: 1 1 45%;
+      max-width: 450px;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px #f0d875cc;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-info {
+      padding: 20px 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #e3d9b0;
+    }
+
+    .project-info h3 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #f0d875;
+    }
+
+    .project-info p {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: #cbbf95cc;
+      flex-grow: 1;
+    }
+
+    .project-info a {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #cba135;
+      align-self: flex-start;
+      user-select: text;
+    }
+
+    .project-info a:hover {
+      color: #f0d875;
+      text-decoration: underline;
+    }
+
+    /* Skills */
+    #skills ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      color: #cbbf95cc;
+      font-weight: 600;
+      font-size: 1.15rem;
+      user-select: none;
+      justify-content: center;
+    }
+
+    #skills ul li {
+      background: #1c1f2a;
+      padding: 12px 22px;
+      border-radius: 30px;
+      box-shadow: 0 0 15px #cba13555;
+      transition: background-color 0.3s ease;
+      cursor: default;
+    }
+
+    #skills ul li:hover {
+      background-color: #cba135cc;
+      color: #0f111a;
+    }
+
+    /* Blog Section */
     #blog .blog-topic {
       cursor: pointer;
       padding: 15px 20px;
       margin-bottom: 12px;
-      background-color: #f9fafb;
+      background-color: #1c1f2a;
       border-left: 4px solid transparent;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       transition: border-color 0.3s ease, background-color 0.3s ease;
-      border-radius: 4px;
-      color: #222;
+      border-radius: 8px;
+      color: #d1c7b7;
+      user-select: none;
     }
 
     #blog .blog-topic:hover {
-      background-color: #e2ebff;
-      border-left-color: #3b82f6;
-      color: #1e40af;
+      background-color: #cba135dd;
+      border-left-color: #f0d875;
+      color: #0f111a;
     }
 
-    /* Blog content block */
     #blog .blog-content {
       display: none;
       margin-top: 30px;
-      padding: 25px 30px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-      color: #111;
-      font-family: 'Lato', sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      max-width: 700px;
-      white-space: normal;
+      padding: 30px 35px;
+      background: #1c1f2a;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px #cba13588;
+      color: #d1c7b7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      max-width: 720px;
+      user-select: text;
     }
 
     #blog .blog-content.active {
@@ -54,46 +318,159 @@
     }
 
     #blog .blog-content h2 {
+      font-family: 'Merriweather', serif;
       font-weight: 900;
-      color: #0f172a;
-      margin-bottom: 20px;
-      font-size: 2rem;
+      color: #f0d875;
+      margin-bottom: 22px;
+      font-size: 2.4rem;
+      user-select: none;
     }
 
     #blog .close-btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 8px 18px;
-      background-color: #3b82f6;
-      color: white;
-      border-radius: 6px;
+      margin-top: 24px;
+      padding: 10px 28px;
+      background-color: #cba135;
+      color: #0f111a;
+      border-radius: 12px;
       cursor: pointer;
       font-weight: 700;
+      font-size: 1rem;
       transition: background-color 0.3s ease;
       user-select: none;
     }
 
     #blog .close-btn:hover {
-      background-color: #2563eb;
+      background-color: #f0d875;
     }
 
-    html {
-      scroll-behavior: smooth;
+    /* Contact Form */
+    #contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    #contact-form input[type="email"],
+    #contact-form textarea {
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      background: #1c1f2a;
+      color: #d1c7b7;
+      box-shadow: inset 0 0 8px #cba135bb;
+      resize: vertical;
+      min-height: 45px;
+    }
+
+    #contact-form textarea {
+      min-height: 120px;
+    }
+
+    #contact-form button {
+      background: #cba135;
+      color: #0f111a;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 15px 0;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 20px #cba135cc;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    #contact-form button:hover {
+      background: #f0d875;
+    }
+
+    #success-message {
+      text-align: center;
+      font-weight: 600;
+      color: #cba135dd;
+    }
+
+    /* Footer */
+    footer {
+      background: #121623;
+      padding: 25px 20px;
+      color: #7a6b4a;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select: none;
+      box-shadow: inset 0 5px 15px #cba13522;
+      border-top: 1px solid #362f25;
+    }
+
+    footer .social ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 10px;
+    }
+
+    footer .social ul li a {
+      color: #7a6b4a;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+
+    footer .social ul li a:hover {
+      color: #cba135;
+    }
+
+    /* Scroll to top */
+    #to-top {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #cba135;
+      user-select: none;
+      margin-top: 10px;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    #to-top:hover {
+      color: #f0d875;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      #menu {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      header {
+        padding: 15px 10px;
+      }
+
+      #lead h1 {
+        font-size: 3rem;
+      }
+
+      #lead h2 {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div id="mobile-menu-open" class="shadow-large">
-    <i class="fa fa-bars" aria-hidden="true"></i>
-  </div>
-
   <header>
-    <div id="mobile-menu-close">
-      <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
     <ul id="menu" class="shadow">
-      <li><a href="#about">About</a></li>
+      <li><a href="#about" class="active">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -108,13 +485,6 @@
       <h2>Crafting Code & Ideas</h2>
       <a href="#" class="btn-rounded-white">Download Resume</a>
     </div>
-
-    <div id="lead-overlay"></div>
-
-    <div id="lead-down">
-      <span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
-      <span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
-    </div>
   </div>
 
   <div class="container">
@@ -128,7 +498,6 @@
 
     <section id="education" class="section">
       <h2 class="heading">Education</h2>
-
       <div class="education-block">
         <h3>Ridge Point High School</h3>
         <h4>Graduating in 2027</h4>
@@ -137,7 +506,6 @@
 
     <section id="projects" class="section background-alt">
       <h2 class="heading">Projects</h2>
-
       <div class="row">
 
         <div class="project shadow-large col-md-6">
@@ -168,7 +536,7 @@
     <section id="skills" class="section">
       <h2 class="heading">Skills</h2>
       <ul>
-        <li>HTML </li>
+        <li>HTML</li>
         <li>Python</li>
         <li>Java</li>
         <li>GitHub</li>
@@ -180,21 +548,18 @@
     <section id="blog" class="section background-alt">
       <h2 class="heading">Blog</h2>
 
-      <!-- Blog topics list: only titles -->
       <div id="blog-topics">
         <div class="blog-topic" data-post="future">
           🔮 The Future I Imagine
         </div>
       </div>
 
-      <!-- Blog full content -->
       <div id="blog-posts">
         <div id="post-future" class="blog-content">
           <h2>🔮 The Future I Imagine</h2>
           <p>
             As a high school student deeply passionate about technology, I constantly envision a future where innovation and humanity merge seamlessly to transform every aspect of our lives. I imagine a world where intelligent machines are not just tools but trusted partners, augmenting human creativity and helping solve the world’s toughest problems. In this future, cities will evolve into smart ecosystems where transportation is autonomous and eco-friendly, energy consumption is optimized, and communication happens instantly through connected devices. Education will be revolutionized by immersive experiences, replacing traditional classrooms with virtual reality environments that personalize learning and inspire curiosity. Health technology will advance to a point where continuous monitoring and predictive analytics prevent diseases before symptoms appear, dramatically improving quality of life. Although automation will take over routine tasks, it will open up new opportunities that demand creativity, emotional intelligence, and complex problem-solving—skills that define our humanity. I am excited by this vision and motivated to contribute to building this future through my coding skills and curiosity, hoping to create technology that empowers people, bridges gaps, and unlocks possibilities yet to be imagined.
           </p>
-
           <span class="close-btn" onclick="closePost()">Close</span>
         </div>
       </div>
@@ -207,67 +572,74 @@
           <input type="email" name="email" placeholder="Your email" required />
           <textarea name="message" placeholder="Your message" required></textarea>
           <button type="submit">Send</button>
-          <p id="success-message" style="display:none; color: green; margin-top: 10px;">
+          <p id="success-message" style="display:none; color: #cba135; margin-top: 10px;">
             Thanks! Your message has been sent ✅
           </p>
         </form>
       </div>
     </section>
+
   </div>
 
   <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 copyright">
-          <p>© <span id="current-year"></span> Keyur Bele</p>
-        </div>
-        <div class="col-sm-2 top">
-          <span id="to-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
-        </div>
-        <div class="col-sm-5 social">
-          <ul>
-            <li><a href="#" target="_blank"><i class="fa fa-github"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-          </ul>
-        </div>
-      </div>
+    <p>© <span id="current-year"></span> Keyur Bele</p>
+    <div class="social">
+      <ul>
+        <li><a href="#" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
     </div>
+    <div id="to-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
   </footer>
 
   <script>
-    // Scroll to top
+    // Highlight active menu link based on scroll
+    const sections = document.querySelectorAll("section");
+    const menuLinks = document.querySelectorAll("#menu li a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      menuLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // Blog post toggle
+    const blogTopics = document.querySelectorAll(".blog-topic");
+    const blogPosts = document.querySelectorAll(".blog-content");
+
+    blogTopics.forEach((topic) => {
+      topic.addEventListener("click", () => {
+        blogPosts.forEach((post) => post.classList.remove("active"));
+        const postId = "post-" + topic.dataset.post;
+        document.getElementById(postId).classList.add("active");
+        // Scroll blog post into view smoothly
+        document.getElementById(postId).scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    function closePost() {
+      blogPosts.forEach((post) => post.classList.remove("active"));
+      document.getElementById("blog-topics").scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Scroll to top button
     document.getElementById("to-top").addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
     // Update current year
     document.getElementById("current-year").textContent = new Date().getFullYear();
-
-    // Blog topic click handler
-    const topics = document.querySelectorAll("#blog-topics .blog-topic");
-    const posts = document.querySelectorAll("#blog-posts .blog-content");
-
-    topics.forEach((topic) => {
-      topic.addEventListener("click", () => {
-        // Hide all posts
-        posts.forEach((post) => post.classList.remove("active"));
-
-        // Show clicked post
-        const postId = "post-" + topic.dataset.post;
-        const activePost = document.getElementById(postId);
-        if (activePost) {
-          activePost.classList.add("active");
-          activePost.scrollIntoView({ behavior: "smooth" });
-        }
-      });
-    });
-
-    // Close button function
-    function closePost() {
-      posts.forEach((post) => post.classList.remove("active"));
-      document.getElementById("blog-topics").scrollIntoView({ behavior: "smooth" });
-    }
   </script>
 </body>
 
