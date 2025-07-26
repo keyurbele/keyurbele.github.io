@@ -230,29 +230,13 @@
       flex-direction: column;
       user-select: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 30px 32px;
+      color: #e3d9b0;
     }
 
     .project:hover {
       transform: translateY(-12px);
       box-shadow: 0 20px 45px #f0d875cc;
-    }
-
-    .project-image img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      display: block;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-    }
-
-    .project-info {
-      padding: 30px 32px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: #e3d9b0;
     }
 
     .project-info h3 {
@@ -280,6 +264,7 @@
       border-bottom: 2px solid transparent;
       padding-bottom: 2px;
       transition: border-color 0.3s ease;
+      text-decoration: none;
     }
 
     .project-info a:hover {
@@ -331,11 +316,13 @@
       box-shadow: 0 4px 16px #cba135aa;
     }
 
-    #blog .blog-topic:hover {
+    #blog .blog-topic:hover,
+    #blog .blog-topic:focus {
       background-color: #cba135dd;
       border-left-color: #f0d875;
       color: #0f111a;
       box-shadow: 0 6px 25px #f0d875cc;
+      outline: none;
     }
 
     #blog .blog-content {
@@ -387,10 +374,13 @@
       box-shadow: 0 0 28px #cba135cc;
       transition: background-color 0.3s ease;
       user-select: none;
+      border: none;
     }
 
-    #blog .close-btn:hover {
+    #blog .close-btn:hover,
+    #blog .close-btn:focus {
       background-color: #f0d875;
+      outline: none;
     }
 
     /* Contact Form */
@@ -400,6 +390,11 @@
       gap: 18px;
       max-width: 520px;
       margin: 0 auto;
+    }
+
+    #contact-form label {
+      font-weight: 600;
+      color: #cba135;
     }
 
     #contact-form input[type="email"],
@@ -498,8 +493,10 @@
       transition: color 0.3s ease;
     }
 
-    #to-top:hover {
+    #to-top:hover,
+    #to-top:focus {
       color: #f0d875;
+      outline: none;
     }
 
     /* Responsive */
@@ -566,7 +563,7 @@
       </div>
     </section>
 
-   <!-- Projects -->
+    <!-- Projects -->
     <section id="projects" tabindex="-1" aria-label="Projects section" class="background-alt">
       <h2 class="heading">Projects</h2>
       <div class="row" role="list">
@@ -576,180 +573,178 @@
             <p>Test your typing speed with this fun and simple web game.</p>
             <a href="https://keyurbele.github.io/typing_speed-/" target="_blank" rel="noopener noreferrer">Play Game</a>
           </div>
-          <div class="project-image">
-            <img src="https://i.ibb.co/vcQHT6M/typing.png" alt="Typing Speed Game screenshot" />
-          </div>
         </div>
         <div class="project" role="listitem">
           <div class="project-info">
             <h3>Shooting Game</h3>
-            <p>An exciting Python shooting game with neon UI and cool mechanics.</p>
-            <a href="https://github.com/keyurbele/shooting_game" target="_blank" rel="noopener noreferrer">View Code</a>
+            <p>A stylish shooting game with pause/resume and neon UI.</p>
+            <a href="https://keyurbele.github.io/shooting_game/" target="_blank" rel="noopener noreferrer">Play Game</a>
           </div>
-          <div class="project-image">
-            <img src="https://i.ibb.co/Yb8Yz5P/shootinggame.png" alt="Shooting Game screenshot" />
+        </div>
+        <div class="project" role="listitem">
+          <div class="project-info">
+            <h3>AutoCV - Resume Generator</h3>
+            <p>Python-based tool to quickly create professional resumes.</p>
+            <a href="https://github.com/keyurbele/AutoCV" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </div>
+        <div class="project" role="listitem">
+          <div class="project-info">
+            <h3>Scholarship Tracker App</h3>
+            <p>Free app to track scholarships and deadlines efficiently.</p>
+            <a href="https://github.com/keyurbele/Scholarship_Tracker" target="_blank" rel="noopener noreferrer">View on GitHub</a>
           </div>
         </div>
       </div>
     </section>
+
     <!-- Skills -->
     <section id="skills" tabindex="-1" aria-label="Skills section">
       <h2 class="heading">Skills</h2>
-      <ul role="list" aria-label="List of programming skills">
+      <ul>
         <li>Python</li>
         <li>JavaScript</li>
-        <li>HTML & CSS</li>
-        <li>React</li>
+        <li>HTML5 & CSS3</li>
         <li>Git & GitHub</li>
-        <li>SQL</li>
+        <li>React.js</li>
+        <li>AP Computer Science</li>
       </ul>
     </section>
 
-   <!-- Blog -->
-<section id="blog" tabindex="-1" aria-label="Blog section" class="background-alt">
-  <h2 class="heading">Blog</h2>
-  <div id="blog-topics" role="list">
-    <div class="blog-topic" data-post="python" role="listitem" tabindex="0" aria-controls="post-python" aria-expanded="false">
-      Learning Python – Tips for Beginners (From My Experience)
-    </div>
-    <div class="blog-topic" data-post="portfolio" role="listitem" tabindex="0" aria-controls="post-portfolio" aria-expanded="false">
-      Building a Portfolio Website from Scratch
-    </div>
-    <div class="blog-topic" data-post="future" role="listitem" tabindex="0" aria-controls="post-future" aria-expanded="false">
-      🔮 The Future I Imagine
-    </div>
-  </div>
-  <div id="blog-posts">
-    <div id="post-python" class="blog-content" role="region" aria-live="polite" aria-hidden="true">
-      <h2>Learning Python – Tips for Beginners (From My Experience)</h2>
-      <p>When I first started learning Python, I was a bit overwhelmed by all the new concepts and syntax. But what really helped me was breaking things down into small, manageable chunks. Instead of trying to learn everything at once, I focused on mastering the basics first, like variables, loops, and functions. Practicing regularly was key—I set small projects for myself like making simple games or calculators. Also, reading other people’s code and understanding how they solve problems gave me new ideas and improved my skills. My biggest tip? Don’t be afraid to make mistakes. Every error is a chance to learn something new, so keep experimenting and stay curious. Python is a powerful language, and with patience and practice, it becomes an amazing tool to bring your ideas to life.</p>
-      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
-    </div>
+    <!-- Blog -->
+    <section id="blog" tabindex="-1" aria-label="Blog section">
+      <h2 class="heading">Blog</h2>
 
-    <div id="post-portfolio" class="blog-content" role="region" aria-live="polite" aria-hidden="true">
-      <h2>Building a Portfolio Website from Scratch</h2>
-      <p>Creating my own portfolio website was a game changer. It’s not just about having a place to show your projects—it’s about telling your story as a coder. Building it from scratch helped me understand web development better, especially HTML, CSS, and a bit of JavaScript. Plus, it gave me a real product to be proud of when applying to internships or scholarships. If you want to build your own, start simple: choose a clean design, focus on clear navigation, and highlight your best work. Keep your descriptions honest and show what you learned in each project. A personal touch—like a short bio or a story behind a project—makes it stand out. Remember, the portfolio is a living thing; update it often as you grow your skills. It’s your digital handshake, so make it professional but also uniquely you.</p>
-      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
-    </div>
+      <div class="blog-topic" role="button" tabindex="0" aria-expanded="false" aria-controls="blog1" id="blog-topic-1">
+        Why I Started Coding
+      </div>
+      <article id="blog1" class="blog-content" role="region" aria-labelledby="blog-topic-1" tabindex="-1">
+        <h2>Why I Started Coding</h2>
+        <p>Ever since I was a kid, I loved solving problems and building things. Coding became the natural path to express my creativity and logic. It opened up a whole new world where I could create anything from games to apps. It’s empowering and fun!</p>
+        <button class="close-btn" aria-label="Close blog post">Close</button>
+      </article>
 
-    <div id="post-future" class="blog-content" role="region" aria-live="polite" aria-hidden="true">
-      <h2>🔮 The Future I Imagine</h2>
-      <p>As a high school student passionate about technology, I see a future full of exciting possibilities. I imagine a world where technology and humans work hand-in-hand to solve big problems like climate change, health crises, and education gaps. Smart cities will use clean energy, self-driving cars will be common, and virtual reality will make learning feel like an adventure. I think technology will not replace people but help us unlock new creative ideas and connect in ways we never imagined. I want to be part of that future by using my coding skills to create tools that help others, bring communities together, and inspire curiosity. The future is a canvas, and I’m excited to paint my part of it with code.</p>
-      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
-    </div>
-  </div>
-</section>
+      <div class="blog-topic" role="button" tabindex="0" aria-expanded="false" aria-controls="blog2" id="blog-topic-2">
+        My Favorite Programming Languages
+      </div>
+      <article id="blog2" class="blog-content" role="region" aria-labelledby="blog-topic-2" tabindex="-1">
+        <h2>My Favorite Programming Languages</h2>
+        <p>Python tops my list for its simplicity and power, especially in projects and data. JavaScript is awesome for web development and making interactive sites. Each language has unique strengths and I enjoy learning them all.</p>
+        <button class="close-btn" aria-label="Close blog post">Close</button>
+      </article>
+    </section>
 
     <!-- Contact Form -->
-    <section id="contact-form" tabindex="-1" aria-label="Contact form">
+    <section id="contact-form" tabindex="-1" aria-label="Contact form section">
       <h2 class="heading">Contact Me</h2>
-      <form id="form" aria-describedby="success-message">
+      <form id="form" aria-live="polite">
         <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="your.email@example.com" required aria-required="true" />
+        <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true" aria-describedby="emailHelp" />
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Write your message here..." required aria-required="true"></textarea>
         <button type="submit">Send Message</button>
-        <div id="success-message" role="alert" aria-live="polite"></div>
       </form>
+      <div id="success-message" aria-live="assertive" role="alert"></div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Keyur Bele | KarmaCode</p>
-    <div class="social" role="navigation" aria-label="Social media links">
+    &copy; 2025 KarmaCode by Keyur Bele. All rights reserved.
+    <div class="social">
       <ul>
-        <li><a href="https://github.com/keyurbele" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
-        <li><a href="https://linkedin.com/in/keyurbele" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-        <li><a href="https://twitter.com/keyurbele" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+        <li><a href="https://github.com/keyurbele" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://linkedin.com/in/keyurbele" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="mailto:keyurbele@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
       </ul>
     </div>
-    <div id="to-top" role="button" tabindex="0" aria-label="Scroll to top" title="Scroll to top">&#8679;</div>
+    <div id="to-top" role="button" tabindex="0" aria-label="Scroll to top" title="Scroll to top"><i class="fas fa-arrow-up"></i></div>
   </footer>
 
+  <!-- Scripts -->
   <script>
     // Smooth scroll for menu links
     document.querySelectorAll('#menu a').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelectorAll('#menu a').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('#menu a').forEach(a => a.classList.remove('active'));
         link.classList.add('active');
         const target = document.querySelector(link.getAttribute('href'));
-        if (target) target.focus();
-        target.scrollIntoView({ behavior: 'smooth' });
+        if (target) {
+          target.focus();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
 
-// Blog topic toggle
-const blogTopics = document.querySelectorAll('.blog-topic');
-const blogContents = document.querySelectorAll('.blog-content');
-const closeButtons = document.querySelectorAll('.blog-content .close-btn');
+    // Blog toggle functionality
+    const blogTopics = document.querySelectorAll('.blog-topic');
+    const blogContents = document.querySelectorAll('.blog-content');
 
-blogTopics.forEach(topic => {
-  topic.addEventListener('click', () => {
-    const id = topic.getAttribute('aria-controls');
-    const content = document.getElementById(id);
-
-    // Hide all contents & reset aria-expanded on topics
-    blogContents.forEach(c => {
-      c.classList.remove('active');
-    });
-
-    blogTopics.forEach(t => {
-      t.setAttribute('aria-expanded', 'false');
-    });
-
-    // Show selected
-    if (content) {
-      content.classList.add('active');
-      topic.setAttribute('aria-expanded', 'true');
-      content.querySelector('.close-btn').focus();
-    }
-  });
-
-  topic.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      topic.click();
-    }
-  });
-});
-
-closeButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.parentElement.classList.remove('active');
-    // Reset aria-expanded
     blogTopics.forEach(topic => {
-      if (topic.getAttribute('aria-controls') === btn.parentElement.id) {
-        topic.setAttribute('aria-expanded', 'false');
-        topic.focus();
-      }
+      topic.addEventListener('click', () => toggleBlog(topic));
+      topic.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleBlog(topic);
+        }
+      });
     });
-  });
-});
 
+    function toggleBlog(topic) {
+      const targetId = topic.getAttribute('aria-controls');
+      const targetContent = document.getElementById(targetId);
+      const isActive = targetContent.classList.contains('active');
 
-    // Contact form submission (mock)
+      // Close all blog posts
+      blogContents.forEach(content => content.classList.remove('active'));
+      blogTopics.forEach(t => t.setAttribute('aria-expanded', 'false'));
+
+      if (!isActive) {
+        targetContent.classList.add('active');
+        topic.setAttribute('aria-expanded', 'true');
+        // Move focus to blog content for accessibility
+        targetContent.focus();
+      }
+    }
+
+    // Close button logic
+    document.querySelectorAll('.blog-content .close-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const article = btn.parentElement;
+        article.classList.remove('active');
+        const topic = document.querySelector(`.blog-topic[aria-controls="${article.id}"]`);
+        if (topic) {
+          topic.setAttribute('aria-expanded', 'false');
+          topic.focus();
+        }
+      });
+    });
+
+    // Contact form submission handler (simple dummy)
     const form = document.getElementById('form');
     const successMessage = document.getElementById('success-message');
 
     form.addEventListener('submit', e => {
       e.preventDefault();
-      successMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+      successMessage.textContent = 'Thank you! Your message has been sent.';
       form.reset();
+      setTimeout(() => {
+        successMessage.textContent = '';
+      }, 5000);
     });
 
-    // Scroll to top button
+    // Scroll to top button functionality
     const toTopBtn = document.getElementById('to-top');
     toTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       document.querySelector('#lead').focus();
     });
-
     toTopBtn.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        toTopBtn.click();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.querySelector('#lead').focus();
       }
     });
   </script>
