@@ -680,48 +680,54 @@
       });
     });
 
-    // Blog topic toggle
-    const blogTopics = document.querySelectorAll('.blog-topic');
-    const blogContents = document.querySelectorAll('.blog-content');
-    const closeButtons = document.querySelectorAll('.blog-content .close-btn');
+// Blog topic toggle
+const blogTopics = document.querySelectorAll('.blog-topic');
+const blogContents = document.querySelectorAll('.blog-content');
+const closeButtons = document.querySelectorAll('.blog-content .close-btn');
 
+blogTopics.forEach(topic => {
+  topic.addEventListener('click', () => {
+    const id = topic.getAttribute('aria-controls');
+    const content = document.getElementById(id);
+
+    // Hide all contents & reset aria-expanded on topics
+    blogContents.forEach(c => {
+      c.classList.remove('active');
+    });
+
+    blogTopics.forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+    });
+
+    // Show selected
+    if (content) {
+      content.classList.add('active');
+      topic.setAttribute('aria-expanded', 'true');
+      content.querySelector('.close-btn').focus();
+    }
+  });
+
+  topic.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      topic.click();
+    }
+  });
+});
+
+closeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.parentElement.classList.remove('active');
+    // Reset aria-expanded
     blogTopics.forEach(topic => {
-      topic.addEventListener('click', () => {
-        const id = topic.getAttribute('aria-controls');
-        const content = document.getElementById(id);
-
-        // Hide all contents
-        blogContents.forEach(c => {
-          c.classList.remove('active');
-          c.previousElementSibling.setAttribute('aria-expanded', 'false');
-        });
-
-        // Show selected
-        content.classList.add('active');
-        topic.setAttribute('aria-expanded', 'true');
-        content.querySelector('.close-btn').focus();
-      });
-
-      topic.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          topic.click();
-        }
-      });
+      if (topic.getAttribute('aria-controls') === btn.parentElement.id) {
+        topic.setAttribute('aria-expanded', 'false');
+        topic.focus();
+      }
     });
+  });
+});
 
-    closeButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.parentElement.classList.remove('active');
-        // Reset aria-expanded
-        blogTopics.forEach(topic => {
-          if (topic.getAttribute('aria-controls') === btn.parentElement.id) {
-            topic.setAttribute('aria-expanded', 'false');
-            topic.focus();
-          }
-        });
-      });
-    });
 
     // Contact form submission (mock)
     const form = document.getElementById('form');
