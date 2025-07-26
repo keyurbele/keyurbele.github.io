@@ -581,21 +581,7 @@
             <a href="https://keyurbele.github.io/shooting_game/" target="_blank" rel="noopener noreferrer">Play Game</a>
           </div>
         </div>
-        <div class="project" role="listitem">
-          <div class="project-info">
-            <h3>AutoCV - Resume Generator</h3>
-            <p>Python-based tool to quickly create professional resumes.</p>
-            <a href="https://github.com/keyurbele/AutoCV" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </div>
-        </div>
-        <div class="project" role="listitem">
-          <div class="project-info">
-            <h3>Scholarship Tracker App</h3>
-            <p>Free app to track scholarships and deadlines efficiently.</p>
-            <a href="https://github.com/keyurbele/Scholarship_Tracker" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </div>
-        </div>
-      </div>
+
     </section>
 
     <!-- Skills -->
@@ -612,27 +598,39 @@
     </section>
 
     <!-- Blog -->
-    <section id="blog" tabindex="-1" aria-label="Blog section">
-      <h2 class="heading">Blog</h2>
+   <section id="blog" tabindex="-1" aria-label="Blog section" class="background-alt">
+  <h2 class="heading">Blog</h2>
+  <div id="blog-topics" role="list">
+    <div class="blog-topic" data-post="python" role="listitem" tabindex="0" aria-controls="post-python" aria-expanded="false">
+      Learning Python – Tips for Beginners (From My Experience)
+    </div>
+    <div class="blog-topic" data-post="portfolio" role="listitem" tabindex="0" aria-controls="post-portfolio" aria-expanded="false">
+      Building a Portfolio Website from Scratch
+    </div>
+    <div class="blog-topic" data-post="future" role="listitem" tabindex="0" aria-controls="post-future" aria-expanded="false">
+      🔮 The Future I Imagine
+    </div>
+  </div>
+  <div id="blog-posts">
+    <div id="post-python" class="blog-content" role="region" aria-live="polite" aria-hidden="true">
+      <h2>Learning Python – Tips for Beginners (From My Experience)</h2>
+      <p>When I first started learning Python, I was a bit overwhelmed by all the new concepts and syntax. But what really helped me was breaking things down into small, manageable chunks. Instead of trying to learn everything at once, I focused on mastering the basics first, like variables, loops, and functions. Practicing regularly was key—I set small projects for myself like making simple games or calculators. Also, reading other people’s code and understanding how they solve problems gave me new ideas and improved my skills. My biggest tip? Don’t be afraid to make mistakes. Every error is a chance to learn something new, so keep experimenting and stay curious. Python is a powerful language, and with patience and practice, it becomes an amazing tool to bring your ideas to life.</p>
+      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
+    </div>
 
-      <div class="blog-topic" role="button" tabindex="0" aria-expanded="false" aria-controls="blog1" id="blog-topic-1">
-        Why I Started Coding
-      </div>
-      <article id="blog1" class="blog-content" role="region" aria-labelledby="blog-topic-1" tabindex="-1">
-        <h2>Why I Started Coding</h2>
-        <p>Ever since I was a kid, I loved solving problems and building things. Coding became the natural path to express my creativity and logic. It opened up a whole new world where I could create anything from games to apps. It’s empowering and fun!</p>
-        <button class="close-btn" aria-label="Close blog post">Close</button>
-      </article>
+    <div id="post-portfolio" class="blog-content" role="region" aria-live="polite" aria-hidden="true">
+      <h2>Building a Portfolio Website from Scratch</h2>
+      <p>Creating my own portfolio website was a game changer. It’s not just about having a place to show your projects—it’s about telling your story as a coder. Building it from scratch helped me understand web development better, especially HTML, CSS, and a bit of JavaScript. Plus, it gave me a real product to be proud of when applying to internships or scholarships. If you want to build your own, start simple: choose a clean design, focus on clear navigation, and highlight your best work. Keep your descriptions honest and show what you learned in each project. A personal touch—like a short bio or a story behind a project—makes it stand out. Remember, the portfolio is a living thing; update it often as you grow your skills. It’s your digital handshake, so make it professional but also uniquely you.</p>
+      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
+    </div>
 
-      <div class="blog-topic" role="button" tabindex="0" aria-expanded="false" aria-controls="blog2" id="blog-topic-2">
-        My Favorite Programming Languages
-      </div>
-      <article id="blog2" class="blog-content" role="region" aria-labelledby="blog-topic-2" tabindex="-1">
-        <h2>My Favorite Programming Languages</h2>
-        <p>Python tops my list for its simplicity and power, especially in projects and data. JavaScript is awesome for web development and making interactive sites. Each language has unique strengths and I enjoy learning them all.</p>
-        <button class="close-btn" aria-label="Close blog post">Close</button>
-      </article>
-    </section>
+    <div id="post-future" class="blog-content" role="region" aria-live="polite" aria-hidden="true">
+      <h2>🔮 The Future I Imagine</h2>
+      <p>As a high school student passionate about technology, I see a future full of exciting possibilities. I imagine a world where technology and humans work hand-in-hand to solve big problems like climate change, health crises, and education gaps. Smart cities will use clean energy, self-driving cars will be common, and virtual reality will make learning feel like an adventure. I think technology will not replace people but help us unlock new creative ideas and connect in ways we never imagined. I want to be part of that future by using my coding skills to create tools that help others, bring communities together, and inspire curiosity. The future is a canvas, and I’m excited to paint my part of it with code.</p>
+      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
+    </div>
+  </div>
+</section>
 
     <!-- Contact Form -->
     <section id="contact-form" tabindex="-1" aria-label="Contact form section">
