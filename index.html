@@ -572,25 +572,17 @@
         <div class="row">
           <div class="project">
             <div class="project-info">
-              <h3>Portfolio Website</h3>
-              <p>A fully responsive portfolio website built using HTML, CSS, and JavaScript to showcase my skills, projects, and blog.</p>
-              <a href="https://github.com/keyurbele/portfolio" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <h3>To do list</h3>
+              <p>It is free.</p>
+              <a href="https://keyurbele.github.io/to-do-list-/" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
           </div>
 
           <div class="project">
             <div class="project-info">
-              <h3>To Do List</h3>
-              <p>A JavaScript app to manage daily tasks with add, edit, and delete functionality, demonstrating DOM manipulation and event handling.</p>
-              <a href="https://keyurbele.github.io/todo-list/" target="_blank" rel="noopener noreferrer">Try It Online</a>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-info">
-              <h3>Random Quote Generator</h3>
-              <p>A web app that fetches and displays random motivational quotes using external APIs and dynamic styling.</p>
-              <a href="https://keyurbele.github.io/quote-generator/" target="_blank" rel="noopener noreferrer">View Project</a>
+              <h3>Typing speed game</h3>
+              <p>Just 5 mins of your time.</p>
+              <a href="https://keyurbele.github.io/typing_speed-/" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
           </div>
         </div>
@@ -648,7 +640,7 @@
 
     <div id="post-motivation" class="blog-content" role="region" aria-live="polite" aria-hidden="true" tabindex="0">
       <h2>How I Stay Motivated During Tough Coding Challenges</h2>
-      <p>Coding can be really tough sometimes—especially when a problem feels impossible or my code won’t work no matter what. I’ve learned that breaking big problems into smaller parts helps a lot, and celebrating small wins keeps me motivated. When I get stuck, I take short breaks to clear my mind or ask friends for help because coding doesn’t have to be a solo journey. What keeps me going is remembering why I started coding in the first place—the thrill of solving puzzles and creating something new. That passion helps me push through the frustrating moments and reminds me that every challenge is just part of getting better.</p>
+      <p>Coding can be really tough sometimes—especially when a problem feels impossible or my code won’t work no matter what. I’ve learned that breaking big problems into smaller parts helps a lot, and celebrating small wins keeps me motivated. When I get stuck, I take short breaks to clear my mind or ask friends for help because coding doesn’t have to be a solo journey. What keeps me going is remembering why I started coding in the first place the thrill of solving puzzles and creating something new. That passion helps me push through the frustrating moments and reminds me that every challenge is just part of getting better.</p>
       <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
     </div>
 
@@ -666,7 +658,7 @@
 
     <div id="post-research" class="blog-content" role="region" aria-live="polite" aria-hidden="true" tabindex="0">
       <h2>My First Research and the Time It Took Me</h2>
-      <p>Doing my first research paper was a huge challenge that took a lot of time and effort, but it taught me discipline and how deep learning really works. Diving into detailed topics and organizing all the information pushed me to be patient and focused. It showed me that real research is more than just coding—it’s about critical thinking, writing clearly, and sharing knowledge with others. If you’re curious and want to dive deeper, feel free to check out my full research paper here: <a href="https://zenodo.org/records/16789618" target="_blank" rel="noopener noreferrer">My Cybersecurity Research</a>.</p>
+      <p>Doing my first research paper was a huge challenge that took a lot of time and effort, but it taught me discipline and how deep learning really works. Diving into detailed topics and organizing all the information pushed me to be patient and focused. It showed me that real research is more than just coding it’s about critical thinking, writing clearly, and sharing knowledge with others. If you’re curious and want to dive deeper, feel free to check out my full research paper here: <a href="https://zenodo.org/records/16789618" target="_blank" rel="noopener noreferrer">My Cybersecurity Research</a>.</p>
       <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
     </div>
   </div>
@@ -675,16 +667,19 @@
 
     <!-- Contact Section -->
     <section id="contact-form" aria-label="Contact form">
-      <h2 class="heading">Contact Me</h2>
-      <form id="form" aria-live="polite" aria-relevant="additions" aria-atomic="true" novalidate>
-        <label for="email">Email address</label>
-        <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email" aria-required="true" />
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Write your message here..." rows="6" required aria-required="true"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <p id="success-message" role="alert" aria-live="assertive"></p>
-    </section>
+  <h2 class="heading">Contact Me</h2>
+  <form id="form" action="https://formspree.io/f/mzzvbqoe" method="POST" aria-live="polite" aria-relevant="additions" aria-atomic="true" novalidate>
+    <label for="email">Email address</label>
+    <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email" aria-required="true" />
+    
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write your message here..." rows="6" required aria-required="true"></textarea>
+    
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="success-message" role="alert" aria-live="assertive"></p>
+</section>
+
   </main>
 
   <!-- Footer -->
@@ -696,7 +691,7 @@
     <div class="social" aria-label="Social media links">
       <ul>
         <li><a href="https://github.com/keyurbele" target="_blank" aria-label="GitHub Profile" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
-        <li><a href="https://linkedin.com/in/keyurbele" target="_blank" aria-label="LinkedIn Profile" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
+        
         <li><a href="https://twitter.com/keyurbele" target="_blank" aria-label="Twitter Profile" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a></li>
       </ul>
     </div>
