@@ -9,7 +9,7 @@
 
   <meta name="description" content="Keyur Bele's portfolio showcasing computer science projects, skills, and blog." />
 
-  <!-- Favicon (upload your favicon.ico file in the root folder) -->
+  <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
@@ -580,9 +580,9 @@
 
           <div class="project">
             <div class="project-info">
-              <h3>Typing speed game</h3>
-              <p>Just 5 mins of your time.</p>
-              <a href="https://keyurbele.github.io/typing_speed-/" target="_blank" rel="noopener noreferrer">View Project</a>
+              <h3>Raspberry Pi Air Quality Monitor</h3>
+              <p>Monitoring air quality using Raspberry Pi and sensors, displaying data, and automating fan control based on AQI readings.</p>
+              <a href="https://github.com/keyurbele/raspberry-pi-air-quality" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
           </div>
         </div>
@@ -590,187 +590,81 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" aria-label="Technical Skills">
+    <section id="skills" aria-label="Skills and Expertise">
       <h2 class="heading">Skills</h2>
       <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Data analysis</li>
-        <li>Python (Basics)</li>
-        <li>Cybersecurity</li>
+        <li>Python</li>
+        <li>Arduino</li>
+        <li>Raspberry Pi</li>
+        <li>Web Development</li>
+        <li>AI/ML</li>
+        <li>Data Analysis</li>
       </ul>
     </section>
 
-<!-- Blog Section -->
-<section id="blog" tabindex="-1" aria-label="Blog section" class="background-alt">
-  <h2 class="heading">Blog</h2>
-  <div id="blog-topics" role="list">
-    <div class="blog-topic" data-post="portfolio" role="listitem" tabindex="0" aria-controls="post-portfolio" aria-expanded="false">
-      Building My First Portfolio Website: Lessons Learned
-    </div>
-    <div class="blog-topic" data-post="python" role="listitem" tabindex="0" aria-controls="post-python" aria-expanded="false">
-      Learning Python: My Journey from Beginner to Confident Coder
-    </div>
-    <div class="blog-topic" data-post="motivation" role="listitem" tabindex="0" aria-controls="post-motivation" aria-expanded="false">
-      How I Stay Motivated During Tough Coding Challenges
-    </div>
-    <div class="blog-topic" data-post="cyberops" role="listitem" tabindex="0" aria-controls="post-cyberops" aria-expanded="false">
-      Diving into CyberOps: Why Cybersecurity is My Dream Path
-    </div>
-    <div class="blog-topic" data-post="growth" role="listitem" tabindex="0" aria-controls="post-growth" aria-expanded="false">
-      My Coding Growth: From Simple Scripts to Real Projects
-    </div>
-    <div class="blog-topic" data-post="research" role="listitem" tabindex="0" aria-controls="post-research" aria-expanded="false">
-      My First Research and the Time It Took Me
-    </div>
-  </div>
-  <div id="blog-posts">
-    <div id="post-portfolio" class="blog-content" role="region" aria-live="polite" aria-hidden="true" tabindex="0">
-      <h2>Building My First Portfolio Website: Lessons Learned</h2>
-      <p>Building my first portfolio website was honestly a big milestone for me—it wasn’t just about showing projects but about sharing my story as a coder. At first, I thought it’d be quick and easy, but I quickly learned how much goes into making a site look clean, professional, and easy to use. Picking the right fonts, colors, and layouts mattered way more than I expected. Doing it from scratch helped me really understand HTML, CSS, and JavaScript, and I got excited seeing how my code turned into a real, working site. It also gave me something I’m proud to show when applying for internships or scholarships, which makes all the late nights worth it. I’m still improving the site as I learn more, but building it taught me patience and how to present myself in the best way through code.</p>
-      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
-    </div>
+    <!-- Blog Section -->
+    <section id="blog" aria-label="Blog posts">
+      <h2 class="heading">Blog</h2>
+      <div id="blog-topics">
+        <div class="blog-topic" data-post="airquality" role="listitem" tabindex="0" aria-controls="post-airquality" aria-expanded="false">
+          Building My Raspberry Pi Air Quality Monitor
+        </div>
+      </div>
 
-    <div id="post-python" class="blog-content" role="region" aria-live="polite" aria-hidden="true" tabindex="0">
-      <h2>Learning Python: My Journey from Beginner to Confident Coder</h2>
-      <p>When I first started learning Python, I felt pretty lost and overwhelmed by all the new concepts. But I found that focusing on the basics—like variables, loops, and functions—and practicing small projects helped me gain confidence. I remember struggling with simple errors and feeling frustrated, but each mistake became a lesson that pushed me to keep going. I’d spend hours trying to figure out why my code didn’t work, and that persistence really paid off. Reading other people’s code inspired me and gave me new ideas. I haven’t mastered Python yet, but I’m proud of how far I’ve come, and I’m excited to keep growing and tackling more complex projects.</p>
-      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
-    </div>
+      <div id="blog-posts">
+        <div id="post-airquality" class="blog-content" role="region" aria-live="polite" aria-hidden="true" tabindex="0">
+          <h2>Building My Raspberry Pi Air Quality Monitor</h2>
+          <p>This project was one of the most challenging yet rewarding experiences I’ve had. From picking the right sensors to learning how to read their data, every step pushed me to understand electronics and Python better. I faced lots of trial and error—wiring mistakes, calibration issues, and making the readings meaningful—but seeing it finally work was incredibly satisfying. The monitor can now measure air quality and categorize it as good, moderate, or bad, which taught me how coding and hardware can come together to solve real-world problems. This project didn’t just test my technical skills, it also tested my patience and problem-solving, and it’s something I’m proud to show in my portfolio.</p>
+          <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
+        </div>
+      </div>
+    </section>
 
-    <div id="post-motivation" class="blog-content" role="region" aria-live="polite" aria-hidden="true" tabindex="0">
-      <h2>How I Stay Motivated During Tough Coding Challenges</h2>
-      <p>Coding can be really tough sometimes—especially when a problem feels impossible or my code won’t work no matter what. I’ve learned that breaking big problems into smaller parts helps a lot, and celebrating small wins keeps me motivated. When I get stuck, I take short breaks to clear my mind or ask friends for help because coding doesn’t have to be a solo journey. What keeps me going is remembering why I started coding in the first place the thrill of solving puzzles and creating something new. That passion helps me push through the frustrating moments and reminds me that every challenge is just part of getting better.</p>
-      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
-    </div>
-
-    <div id="post-cyberops" class="blog-content" role="region" aria-live="polite" aria-hidden="true" tabindex="0">
-      <h2>Diving into CyberOps: Why Cybersecurity is My Dream Path</h2>
-      <p>Cybersecurity caught my attention because it feels like the perfect mix of tech, problem-solving, and protecting people, which really motivates me. I’m fascinated by how hackers find weaknesses and how defenders work tirelessly to stop them—it’s like a high-stakes game of strategy. Diving into CyberOps courses opened my eyes to networks, vulnerabilities, and real-world attacks, and every new topic made me more excited about the field. I love that cybersecurity isn’t just about coding but also about thinking critically and adapting quickly. This feels like the career where I can really make a difference, and I’m committed to learning everything I can to protect data and systems in the future.</p>
-      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
-    </div>
-
-    <div id="post-growth" class="blog-content" role="region" aria-live="polite" aria-hidden="true" tabindex="0">
-      <h2>My Coding Growth: From Simple Scripts to Real Projects</h2>
-      <p>I started coding with small scripts that did basic tasks, but those early projects were important because they taught me the basics and how to think like a programmer. As I took on bigger projects like games and web apps, I learned how to write cleaner code, organize my work better, and use tools like Git for version control. Each project challenged me in new ways and helped me grow my skills step by step. I’m proud of how far I’ve come—from simple scripts to projects I can actually share with others. This journey has shown me that with patience and curiosity, I can keep improving and take on bigger challenges.</p>
-      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
-    </div>
-
-    <div id="post-research" class="blog-content" role="region" aria-live="polite" aria-hidden="true" tabindex="0">
-      <h2>My First Research and the Time It Took Me</h2>
-      <p>Doing my first research paper was a huge challenge that took a lot of time and effort, but it taught me discipline and how deep learning really works. Diving into detailed topics and organizing all the information pushed me to be patient and focused. It showed me that real research is more than just coding it’s about critical thinking, writing clearly, and sharing knowledge with others. If you’re curious and want to dive deeper, feel free to check out my full research paper here: <a href="https://zenodo.org/records/16789618" target="_blank" rel="noopener noreferrer">My Cybersecurity Research</a>.</p>
-      <span class="close-btn" role="button" tabindex="0" aria-label="Close blog post" onclick="closePost()" onkeydown="if(event.key==='Enter') closePost()">Close</span>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Contact Section -->
-    <section id="contact-form" aria-label="Contact form">
-  <h2 class="heading">Contact Me</h2>
-  <form id="form" action="https://formspree.io/f/mzzvbqoe" method="POST" aria-live="polite" aria-relevant="additions" aria-atomic="true" novalidate>
-    <label for="email">Email address</label>
-    <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email" aria-required="true" />
-    
-    <label for="message">Message</label>
-    <textarea id="message" name="message" placeholder="Write your message here..." rows="6" required aria-required="true"></textarea>
-    
-    <button type="submit">Send Message</button>
-  </form>
-  <p id="success-message" role="alert" aria-live="assertive"></p>
-</section>
-
+    <!-- Contact Form Section -->
+    <section id="contact-form" aria-label="Contact me">
+      <h2 class="heading">Contact</h2>
+      <form>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Your message here..." required></textarea>
+        <button type="submit">Send</button>
+        <div id="success-message"></div>
+      </form>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>
-      © 2025 Keyur Bele. View my projects on
-      <a href="https://github.com/keyurbele" target="_blank" rel="noopener noreferrer">GitHub</a>.
-    </p>
-    <div class="social" aria-label="Social media links">
+    &copy; 2026 Keyur Bele | KarmaCode
+    <div class="social">
       <ul>
-        <li><a href="https://github.com/keyurbele" target="_blank" aria-label="GitHub Profile" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
-        
-        <li><a href="https://twitter.com/keyurbele" target="_blank" aria-label="Twitter Profile" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a></li>
+        <li><a href="https://github.com/keyurbele" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://linkedin.com/in/keyurbele" target="_blank"><i class="fab fa-linkedin"></i></a></li>
       </ul>
     </div>
-    <div id="to-top" role="button" tabindex="0" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></div>
+    <span id="to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">▲ Top</span>
   </footer>
 
-  <!-- Scripts -->
+  <!-- JS -->
   <script>
-    // Smooth scroll and active menu highlight
-    const menuLinks = document.querySelectorAll('#menu a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        menuLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
+    const topics = document.querySelectorAll('.blog-topic');
+    const posts = document.querySelectorAll('.blog-content');
 
-    // Blog toggle logic
-    const blogTopics = document.querySelectorAll('.blog-topic');
-    const blogContents = document.querySelectorAll('.blog-content');
-    blogTopics.forEach(topic => {
+    topics.forEach(topic => {
       topic.addEventListener('click', () => {
-        const expanded = topic.getAttribute('aria-expanded') === 'true';
-        blogTopics.forEach(t => t.setAttribute('aria-expanded', 'false'));
-        blogContents.forEach(c => c.classList.remove('active'));
-        if (!expanded) {
-          topic.setAttribute('aria-expanded', 'true');
-          const contentId = topic.getAttribute('aria-controls');
-          document.getElementById(contentId).classList.add('active');
-          document.getElementById(contentId).querySelector('.close-btn').focus();
-        }
-      });
-
-      topic.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          topic.click();
-        }
+        const postId = topic.dataset.post;
+        posts.forEach(p => p.classList.remove('active'));
+        document.getElementById(`post-${postId}`).classList.add('active');
+        posts.forEach(p => p.setAttribute('aria-hidden', 'true'));
+        document.getElementById(`post-${postId}`).setAttribute('aria-hidden', 'false');
       });
     });
 
-    // Close blog content button
-    const closeButtons = document.querySelectorAll('.close-btn');
-    closeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.parentElement;
-        content.classList.remove('active');
-        const topicId = content.getAttribute('aria-labelledby');
-        const topic = document.getElementById(topicId);
-        topic.setAttribute('aria-expanded', 'false');
-        topic.focus();
-      });
-    });
-
-    // Contact form submission (fake)
-    const form = document.getElementById('form');
-    const successMessage = document.getElementById('success-message');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      // Simple validation already handled by HTML5, so just show message
-      successMessage.textContent = "Thank you! Your message has been received.";
-      form.reset();
-      form.querySelector('input, textarea').focus();
-    });
-
-    // Scroll to top button
-    const toTop = document.getElementById('to-top');
-    toTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    toTop.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toTop.click();
-      }
-    });
+    function closePost() {
+      posts.forEach(p => p.classList.remove('active'));
+      posts.forEach(p => p.setAttribute('aria-hidden', 'true'));
+    }
   </script>
 </body>
 
